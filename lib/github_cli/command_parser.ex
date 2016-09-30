@@ -1,6 +1,6 @@
 defmodule GithubCli.CommandParser do
   def parse_command("create_repo", args) do
-    GithubCli.Repo.create(List.first(args))
+    GithubCli.Actions.CreateRepository.execute(List.first(args))
   end
 
   def parse_command(command, _args) do

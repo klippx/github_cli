@@ -25,6 +25,7 @@ defmodule GithubCli.CLI do
     Github CLI
     — — — — —
     usage: github_cli <command> <args>
+    supported commands: [add_repo]
     example: github_cli add_repo my_new_repo
     """
   end

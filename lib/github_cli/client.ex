@@ -1,4 +1,4 @@
-defmodule GithubCli.API do
+defmodule GithubCli.Client do
   def post(url, payload) do
     HTTPoison.post!(url, Poison.encode!(payload), headers)
     |> handle_json

@@ -1,12 +1,7 @@
-defmodule GithubCli.Repo do
-  defmodule Repository do
-    @derive [Poison.Encoder]
-    defstruct [:name]
-  end
-
-  def create(name) do
+defmodule GithubCli.Actions.CreateRepository do
+  def execute(name) do
     "https://api.github.com/user/repos"
-    |> GithubCli.API.post(%Repository{name: name})
+    |> GithubCli.Client.post(%GithubCli.Models.Repository{name: name})
     |> handle_response
   end
 

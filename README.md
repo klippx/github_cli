@@ -1,24 +1,19 @@
 # GithubCli
 
-**TODO: Add description**
+A cool tool to do some github stuff from the shell
 
-## Installation
+## Configure .env file
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+In order to do stuff on github you need to create an API key that has access to managing repos.
 
-  1. Add `github_cli` to your list of dependencies in `mix.exs`:
+`cp .env.example .env`
 
-    ```elixir
-    def deps do
-      [{:github_cli, "~> 0.1.0"}]
-    end
-    ```
+Edit `.env` and paste your API key
 
-  2. Ensure `github_cli` is started before your application:
+## Usage
 
-    ```elixir
-    def application do
-      [applications: [:github_cli]]
-    end
-    ```
+### Create a new repo
 
+Create a new empty repo
+
+`./github_cli create_repo <name>`

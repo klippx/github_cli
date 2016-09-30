@@ -10,7 +10,7 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :github_cli, key: :value
+config :github_cli, api_key: System.get_env("GITHUB_API_KEY")
 #
 # And access this configuration in your application as:
 #

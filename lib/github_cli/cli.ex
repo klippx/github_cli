@@ -1,7 +1,7 @@
 defmodule GithubCli.CLI do
   def main(args) do
     parse_args(args)
-    |> IO.puts
+    |> process
   end
 
   def parse_args(args) do
@@ -11,8 +11,13 @@ defmodule GithubCli.CLI do
       {[help: true], _, _}
         -> :help
       {_, [command|args], _}
-        -> GithubCli.CommandParser.parse_command(command, args)
+        -> {command, args}
     end
+  end
+
+  def process({command, args}) do
+    GithubCli.CommandParser.parse_command(command, args)
+    |> IO.puts
   end
 
   def process(:help) do
